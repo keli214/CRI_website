@@ -7,9 +7,13 @@ layout              : page-fullwidth
 permalink           : "/examples/"
 ---
 
-### Table of Contents
-*  Auto generated table of contents
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
 {:toc}
+</div>
 
-##hehe
+#hehe
+##hehehe
 
