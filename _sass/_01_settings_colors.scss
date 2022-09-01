@@ -76,31 +76,31 @@ $topbar-bg-color    : $body-bg;
 $topbar-bg          : $topbar-bg-color;
 
 
-$topbar-dropdown-toggle-color: $ci-1;
+$topbar-dropdown-toggle-color: #A0D8EE;
 
 $topbar-link-color  : #000;
 $topbar-link-color-hover: #000;
 $topbar-link-color-active: #000;
 $topbar-link-color-active-hover: #000;
 
-$topbar-dropdown-label-color: $ci-2;
+$topbar-dropdown-label-color: #A0D8EE;
 $topbar-dropdown-link-bg-hover: #54C1EF;
 
 $topbar-link-bg-active: #54C1EF; // Active Navigation Link
 $topbar-link-bg-hover: #54C1EF;
-$topbar-link-bg-active-hover: $ci-2;
+$topbar-link-bg-active-hover: #A0D8EE;
 
 
 $topbar-dropdown-bg: $ci-6; // Background Mobile Navigation
 $topbar-dropdown-link-color: #000;
-$topbar-dropdown-link-bg: $ci-2;
+$topbar-dropdown-link-bg: #A0D8EE;
 
-$topbar-menu-link-color-toggled: $ci-1;
-$topbar-menu-icon-color-toggled: $ci-1;
+$topbar-menu-link-color-toggled: #A0D8EE;
+$topbar-menu-icon-color-toggled: #A0D8EE;
 $topbar-menu-link-color: #000;
 $topbar-menu-icon-color: #000;
-$topbar-menu-link-color-toggled: $ci-6;
-$topbar-menu-icon-color-toggled: $ci-6;
+$topbar-menu-link-color-toggled: #54C1EF;
+$topbar-menu-icon-color-toggled: #54C1EF;
 
 
 
@@ -108,12 +108,12 @@ $topbar-menu-icon-color-toggled: $ci-6;
 ------------------------------------------------------------------- */
 
 $footer-bg          : #fff;
-$footer-color       : #fff;
+$footer-color       : #000;
 $footer-link-color  : #54C1EF;
 
 
 $subfooter-bg       : #fff;
-$subfooter-color    : #fff;
+$subfooter-color    : #000;
 $subfooter-link-color: #54C1EF;
 
 
