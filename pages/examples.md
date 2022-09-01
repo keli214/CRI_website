@@ -3,8 +3,13 @@ layout              : page
 title               : "Examples"
 meta_title          : "Examples"
 header              : no
-sidebar             : right
 layout              : page-fullwidth
 permalink           : "/examples/"
 ---
-hehe
+
+### Table of Contents
+*  Auto generated table of contents
+{:toc}
+
+##hehe
+
