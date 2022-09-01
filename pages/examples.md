@@ -3,6 +3,7 @@ layout              : page
 title               : "Examples"
 meta_title          : "Examples"
 header              : no
+sidebar: right
 layout              : page-fullwidth
 permalink           : "/examples/"
 ---
@@ -14,6 +15,6 @@ permalink           : "/examples/"
 {:toc}
 </div>
 
-#hehe
-##hehehe
+##hehe {#hehe}
+##hehehe {#hehehe}
 
