@@ -42,7 +42,7 @@ urlimg: 'https://stang126.github.io/CRI/images/'
 
 
 # Logo size is 600x80 pixels
-logo: "logo.png"
+logo: "cri.png"
 
 # Plugins
 plugins:
