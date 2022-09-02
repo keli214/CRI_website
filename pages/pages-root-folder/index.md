@@ -10,17 +10,17 @@ header: false
 widget1:
   title: "Cinnamoroll"
   url: 'https://stang126.github.io/CRI/'
-  image: tumblr_f40443bf9aa38d7eaf4a6940521fe55d_e3aeaff6_640.jpg
+  image: widget-github-303x182.jpg
   text: '...'
 widget2:
   title: "Gert"
   url: 'https://stang126.github.io/CRI/'
-  image: gertcauwenberghs.png
+  image: widget-github-303x182.jpg
   text: '...'
 widget3:
   title: "Kuromi"
   url: 'https://stang126.github.io/CRI/'
-  image: download.jpg
+  image: widget-github-303x182.jpg
   text: '...'
 
 #
