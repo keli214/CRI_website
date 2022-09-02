@@ -49,7 +49,7 @@ L2S is a Python library for interacting with the ISN CRI project hosted at SDSC.
 ---
 ### **Simple Installation**
 
-    {% '
+    {% include alert terminal='
     pip install l2s
     ' %}
 ### **Development Installation**
