@@ -136,7 +136,7 @@ The same Python scripts you’ve developed and run on your local machine can be 
 ## Python libraries present on the CRI servers
 ---
   
-  ```
+{% highlight html %}
   absl-py                     1.1.0 
   bidict                     0.22.0 
   brotlipy                    0.7.0 
@@ -190,7 +190,7 @@ The same Python scripts you’ve developed and run on your local machine can be 
   urllib3                    1.26.8 
   wheel                      0.37.1
   
-  ```
+ {% highlight html %}
 
 
   
