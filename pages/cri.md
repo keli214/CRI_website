@@ -352,7 +352,8 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   * *are seperated by newline characters*
   
   `create_script(*fname*)`
-  Generates the bash file to program HBM for the current network <br/>
+  Generates the bash file to program HBM for the current network 
+  
   Generates the bash file needed to program the axon pointers, neuron pointers, and synapses into hbm
   
   Parameters <br/>
@@ -370,6 +371,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   `gen_input2(*time_step*)`
   Generates the input command for a given time step <br/>
+  
   Generates the necesary bash command to run to provide inputs to the network for a given timestep
   
   Parameters <br/>
@@ -381,7 +383,8 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Return type: str
   
   `txt2script(*cmd_str*)`
-  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command. <br/>
+  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command.
+  
   Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
   
   Parameters <br/>
@@ -466,7 +469,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Writes the network parameters to the FPGA
   
   `Parameters` <br/>
-  * **neuron_model** (*int*) – The type of neuron model to use (1: incremental I&F, 2: leaky I&F, 3: non-leaky I&F)
+  *  **neuron_model** (*int*) – The type of neuron model to use (1: incremental I&F, 2: leaky I&F, 3: non-leaky I&F)
   * **threshold** (*int*) – Neuron spike threshold
   * **n_outputs** (*int*) – The number of neurons in the network
   * **n_inputs** (*int*) – The number of axons in the network
