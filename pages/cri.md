@@ -18,16 +18,16 @@ permalink           : "/cri/"
 </div>
 </div><!-- /.medium-4.columns -->
 
-
-
 <div class="medium-8 medium-pull-4 columns" markdown="1">
   
 {% include alert text='Note! This project is under active development' %}
   
+## Introduction 
   
-CRI_Simulations is a Python library for interfacing with the INC CRI Neuromorphic comuputing system. 
-
-Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for further information, including how to [install]({{ site.url }}{{ site.baseurl }}/cri/#installation) the project.
+  CRI_Simulations is a Python library for interfacing with the INC CRI Neuromorphic comuputing system. 
+  
+  Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for further information, including how to [install]({{ site.url }}{{ site.baseurl }}/cri/#installation) the project.
+  
 ## Usage
   
 ### Installation
