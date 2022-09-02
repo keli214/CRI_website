@@ -136,7 +136,9 @@ permalink           : "/cri/"
   
   HBM is segmented into three sections, one section to hold axon pointers, a section for neuron pointers, and a section for synapses. The different sections in HBM start at different addresses in the HBM. They are as below:
   
-  Axon Base Address: 0 Neuron Base Address: 2<sup>14</sup> Synapse Base Address: 2<sup>15</sup>
+  Axon Base Address: 0<br/>
+  Neuron Base Address: 2<sup>14</sup><br/>
+  Synapse Base Address: 2<sup>15</sup>
   
   HBM is segmented into rows holding eight axons/neurons/synapses each. Since we arrange axons/neurons/synapses into groups of 16 each group of 16 axons/neurons/synapses occupies two adjacent rows in HBM. Within those 16 neuron groups axon and neuron pointers are arranged from zero to 15 where as synapses are arranged from 15 to zero. Axon and neuron pointers contain a starting address that refers to a row in the synapse space of HBM and a length value that determines the number of rows in the synapse section that contain the synapses for that neuron. Within the rows pointed to by an axon/neuron pointer synapses are arranged based on the index of their destination neuron. That is within a two row 16 synapse group synapses are placed at an index based of of their destination neuron modulo 16. So for example if the axon zero pointer points to Rows 0 and 1 of the synapse section and axon 0 has a single synapse to neuron 18 the synapse would be stored in the synapse two slot of the first two rows of the synapse portion of HBM.
   
