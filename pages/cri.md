@@ -178,6 +178,55 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
 ### compile_network module
   
+  
+ #### compile_network.compileNetwork()
+  
+  Creates simulation and FPGA data structures: 
+  
+  Creates a representation of the axon pointers, neuron pointers, and synapse weights in HBM memory both in the format used to produce the commands to program the actual FPGA and in the format expected by the hardware simulator.
+  
+  {% include alert text='inputdict' %}
+  
+  Dictionary specifying inputs to the network. Key, Time Step Value, TODO are these axons or neurons
+  
+  {% include alert info='hbmdict' %}
+  
+  Dictionary specifying the hbm structure for each core expected by the hardware simulator. Key: core number Value: tuple of (pointer,data) where pointer is a numpy array and data is a list of lists of tuples.
+  
+    {% include alert info='outputsdict' %}
+  
+  TODO: I’m not sure what the outputs are for
+  
+    {% include alert info='axonLengthint' %}
+  
+  number of axons specified in the network
+  
+   #### compile_network.external_input_optimization()
+  
+  #### compile_network.load_network(input='test_inputs.txt', connex='test_connectivity.txt', output='out.txt')
+  
+  Loads the network specification.
+  
+  This function loads the inputs and connections specified for the network. Also determines the number of FPGA cores to be used.
+  
+    {% include alert text='Parameters' %}
+  
+  * **input** *(str, optional)* – Path to file specifying network inputs. (the default is the path in config.yaml)
+  
+  * **connex** *(str, optional)* – Path to file specifying network connections. (the default is the path in config.yaml)
+  
+    {% include alert text='Returns' %}
+  
+  * **axons** *(dict)* – Dictionary specifying axons in the network. Key: axon number Value: Synapse Weights
+
+  * **connections** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
+
+  * **inputs** *(dict)* – Dictionary specifying inputs to the network. Key, Time Step Value, axon
+
+  * **outputs** *(dict)* – TODO: I’m not sure what the outputs are for. I belive it’s unused
+
+  * **ncores** *(dict)* – The number of cores peresent in the CRI system
+  
 ### FPGA_Execution.fpga_compiler module
   
 ### FPGA_Execution.fpga_controller module
