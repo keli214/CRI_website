@@ -90,5 +90,5 @@ The configuration dictionary specifies a few properties that are shared by every
 - global_neuron_params is a sub-dictionary of the configuration dictionary
   - v_thr is an entry in the global_neuron_params dictionary, it sets the membrane potential threshold for all neurons in the network
 
-// {% include alert terminal="configuration = {}  <br> configuration &#91;'neuron_type'&#93; " %}
+// {% include alert terminal="configuration = {}  <br> configuration &#91;'neuron_type'&#93; = <q>I&F</q>  <br> configuration &#91; 'global_neuron_params' &#93; = {}  <br> configuration &#91; 'global_neuron_params'&#93; &#91;'v_thr' &#93; = 4" %}
 
