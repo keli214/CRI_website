@@ -136,9 +136,11 @@ The same Python scripts you’ve developed and run on your local machine can be 
 ## Python libraries present on the CRI servers
 ---
   
-    `absl-py          /           1.1.0 
-    bidict             \        0.22.0 
-    brotlipy                    0.7.0 
+  ```
+  
+     absl-py                     1.1.0 
+     bidict                     0.22.0 
+     brotlipy                    0.7.0 
      certifi                 2021.10.8 
      cffi                       1.15.0 
      charset-normalizer          2.0.4 
@@ -187,7 +189,9 @@ The same Python scripts you’ve developed and run on your local machine can be 
      threadpoolctl               3.1.0 
      tqdm                       4.63.0 
      urllib3                    1.26.8 
-     wheel                      0.37.1 `
+     wheel                      0.37.1
+  
+  ```
 
 
   
