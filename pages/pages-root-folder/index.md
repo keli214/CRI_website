@@ -90,5 +90,10 @@ The configuration dictionary specifies a few properties that are shared by every
 - global_neuron_params is a sub-dictionary of the configuration dictionary
   - v_thr is an entry in the global_neuron_params dictionary, it sets the membrane potential threshold for all neurons in the network
 
-// {% include alert terminal="configuration = {}  <br> configuration &#91;'neuron_type'&#93; = <q>I&F</q>  <br> configuration &#91; 'global_neuron_params' &#93; = {}  <br> configuration &#91; 'global_neuron_params'&#93; &#91;'v_thr' &#93; = 4" %}
+{% include alert terminal="configuration = {}  <br> configuration&#91;neuron_type'&#93; = <q>I&F</q>  <br> configuration&#91;'global_neuron_params'&#93; = {}  <br> configuration&#91;'global_neuron_params'&#93; &#91;'v_thr' &#93; = 4" %}
 
+- Defining the Axons Dictionary
+
+    The axons dictionary configures inputs to the network. Axons are synapses connected to neurons in the network that the user can manually send spikes over at a given timestep. Each key in the dictionary is the name of an axon. Each value is a list of two element tuples. Each tuple defines an in-going synapse to a neuron. The first element is the name of a neuron in the network and the second element is the weight of the synaptic connection. Synapse weights must be integers, but they may be positive or negative.
+
+{% include alert terminal="axons = {'alpha': &#91;('a', 3)&#93;, <br> 'beta': &#91;('d', 3)&#93;}" %}
