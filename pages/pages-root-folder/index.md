@@ -41,5 +41,14 @@ permalink: /index.html
 homepage: true
 ---
 
+## Introduction
 
-hehe
+L2S is a Python library for interacting with the ISN CRI project hosted at SDSC. This project aims to make massive scale simulations of spiking neural networks easily accessible to the research community, and in particular researches interested in neuromorphic computing for artificial intelligence and neuroscience researchers. This library allows a user to define a spiking neural network and execute it on one of two backends: the CRI neuromorphic hardware or if the hardware is not available a python simulation of the hardware.
+
+## Installation
+
+### Simple Installation
+
+```
+pip install l2s
+```
