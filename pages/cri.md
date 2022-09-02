@@ -236,9 +236,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   **hbm** – Dictionary specifying the structure of data in memory for each core. Key: core number Value: tuple of (pointer,data) where pointer is a numpy array of tuples representing offsets into hbm memory and data is a list of lists tuples representing synapses.
   
-  `Return type`
-  
-  dict
+  `Return type` dict
   
   {% include alert text='compile_network.partition(<em>network, n_cores</em>)' %}
   Creates adjacency list
@@ -253,9 +251,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Dictionary specifying neurons mapped to each core. Key: core number Value: tuple of (neuron number, core number)
   
-  `Return type`
-  
-  dict
+  `Return type` dict
   
 ### FPGA_Execution.fpga_compiler module
   
@@ -266,80 +262,59 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Produces the needed adxdma dump scripts of a given network to program HBM
   
   `input`
-  
-  The inputs to the network for each timestep. Key, timestep value, list of axons
-  
+  The inputs to the network for each timestep. Key, timestep value, list of axons </br>
   Type: dict
   
   `axon_ptrs`
-  
-  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.
-  
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.</br>
   Type: dict
   
   `Each tuple is (start row, end row).`
   
   `neuron_ptrs`
-  
-  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.
-  
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon. </br>
   Type: numpy array
   
   `Each tuple is (start row, end row).`
   
   `synapses`
-  
-  List of tuples corresponding to synapses. Each tuple is (oncore/offcore bit, synapse address (row index of destination neuron pointer in HBM calculated as floor(destination neuron index / number of neuron groups)), weight)
-  
+  List of tuples corresponding to synapses. Each tuple is (oncore/offcore bit, synapse address (row index of destination neuron pointer in HBM calculated as floor(destination neuron index / number of neuron groups)), weight) </br>
   Type: list
   
-  `HBM_WRITE_CMD`
-  
+  `HBM_WRITE_CMD`</br>
   Type: str
   
-  `HBM_OP_RW`
-  
-  OP code to read/write to hbm vie PCie
-
+  `HBM_OP_RW
+  OP code to read/write to hbm vie PCie </br>
   Type: str
   
   `NRN_BASE_ADDR`
-  
-  Starting address of neuron pointers in HBM
-  
+  Starting address of neuron pointers in HBM </br>
   Type: int
   
   `SYN_BASE_ADDR`
-  
-  Starting address of synapses in HBM
-  
+  Starting address of synapses in HBM </br>
   Type: int
   
   `PTR_ADDR_BITS`
-  
-  Number of bits used to represent pointer starting address
-  
+  Number of bits used to represent pointer starting address </br>
   Type: int
   
   `PTR_LEN_BITS`
-  
   Number of bits used to represent the number of rows of synapses a pointer corresponds to 
   
   `SYN_OP_BITS`
-  
   Number of bits used to represent synapse opcode
   
   `SYN_ADDR_BITS`
-  
   Number of bits used to represent synapse address
   
   `SYN_WEIGHT_BITS`
-  
   Number of bits used to represent synapse weight
   
-  `AXN_BASE_ADDR= *0*`
+  `AXN_BASE_ADDR= <em>0</em>`
   
-  `HBM_OP_RW= '0200000000000000000000000000000000000000000000000000000000'`
+  `HBM_OP_RW= '<em>0200000000000000000000000000000000000000000000000000000000</em>'`
   
   `HBM_WRITE_CMD= '*sudo ./adxdma_dmadump wb 0 0*'`
   
@@ -363,10 +338,10 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Creates the necessary adxdma_dump commands to program the axon pointers into HBM
   
-  Returns:  *script* – The bash commands to run to program the axon pointers in HBM
+  Returns:
+  * *script* – The bash commands to run to program the axon pointers in HBM
   
-  Return type:
-  * str
+  Return type: str
   
   `create_input_script(*num_timesteps, n_inputs, filename*)`
   
@@ -394,8 +369,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Returns
   * **script** – The bash commands to run to program the synapses in HBM
   
-  Return type
-  * str
+  Return type: str
   
   `gen_input(*time_step*)`
   
@@ -411,8 +385,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Returns
   * **command** – The bash command to run to send the input to the FPGA
   
-  Return type
-  * str
+  Return type: str
   
   `txt2script(*cmd_str*)`
   
@@ -426,8 +399,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Returns
   * script_txt – The formated string of bytes
   
-  Return type
-  * str
+  Return type: str
   
   {% include alert text='FPGA_Execution.fpga_compiler.main()' %}
   
@@ -443,10 +415,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Returns
   * **script_txt** – The formated string of bytes
   
-  Return Type
-  * str
-  
-  
+  Return Type: str
   
   
 ### FPGA_Execution.fpga_controller module
