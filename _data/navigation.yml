@@ -20,7 +20,7 @@
   dropdown:
   - title: "L2S"
     url: "/l2s/"
-  - title: "CRI"
+  - title: "CRI_Simulations"
     url: "/cri/"
 
 - title: What's New
