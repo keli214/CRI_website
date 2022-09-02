@@ -135,59 +135,61 @@ The same Python scripts you’ve developed and run on your local machine can be 
 
 ## Python libraries present on the CRI servers
 ---
-
-  absl-py                     1.1.0 
-  bidict                     0.22.0 
-  brotlipy                    0.7.0 
-  certifi                 2021.10.8 
-  cffi                       1.15.0 
-  charset-normalizer          2.0.4 
-  click                       8.1.3 
-  colorama                    0.4.4 
-  conda                      4.12.0 
-  conda-content-trust     0+unknown 
-  conda-package-handling      1.8.1 
-  confuse                     1.7.0 
-  cri-simulations             0.1.2 
-  cryptography               36.0.0 
-  cycler                     0.11.0 
-  fbpca                         1.0 
-  fonttools                  4.33.3 
-  idna                          3.3 
-  joblib                      1.1.0 
-  k-means-constrained         0.7.1 
-  kiwisolver                  1.4.3 
-  l2s                         0.1.3 
-  llvmlite                   0.38.1 
-  matplotlib                  3.5.2 
-  metis                       0.2a5 
-  networkx                    2.8.4 
-  numba                      0.55.2 
-  numpy                      1.22.4 
-  ortools                 9.3.10497 
-  packaging                    21.3 
-  Pillow                      9.1.1 
-  pip                        21.2.4 
-  protobuf                   4.21.1 
-  pycosat                     0.6.3 
-  pycparser                    2.21 
-  PyMetis                    2020.1 
-  pyOpenSSL                  22.0.0 
-  pyparsing                   3.0.9 
-  PySocks                     1.7.1 
-  python-dateutil             2.8.2 
-  PyYAML                        6.0 
-  requests                   2.27.1 
-  ruamel-yaml-conda        0.15.100 
-  scikit-learn                1.1.1 
-  scipy                       1.8.1 
-  setuptools                 61.2.0 
-  six                        1.16.0 
-  sklearn                       0.0
-  threadpoolctl               3.1.0 
-  tqdm                       4.63.0 
-  urllib3                    1.26.8 
-  wheel                      0.37.1
+  
+  | Library       | Version         |
+  | ------------- | -------------   |
+  |absl-py        |            1.1.0|
+  |bidict         |          0.22.0 |
+  |brotlipy       |          0.7.0  |
+  |certifi        |     2021.10.8   |
+  |cffi           |       1.15.0    |
+  |charset-normalizer|       2.0.4  |
+  |click           |      8.1.3     |
+  |colorama        |     0.4.4      |
+  |conda           |   4.12.0       |
+  |conda-content-trust|   0+unknown|
+  |conda-package-handling|    1.8.1 |
+  |confuse          |        1.7.0 |
+  |cri-simulations  |       0.1.2 |
+  |cryptography      |     36.0.0 |
+  |cycler                 |    0.11.0 |
+  |fbpca             |            1.0 |
+  |fonttools          |        4.33.3 |
+  |idna                |          3.3 |
+  |joblib               |       1.1.0 |
+  |k-means-constrained   |      0.7.1 |
+  |kiwisolver             |     1.4.3 |
+  |l2s                 |        0.1.3 |
+  |llvmlite             |      0.38.1 |
+  |matplotlib             |     3.5.2 |
+  |metis                   |    0.2a5 |
+  |networkx       |             2.8.4 |
+  |numba           |           0.55.2 |
+  |numpy            |          1.22.4 |
+  |ortools           |      9.3.10497 |
+  |packaging          |          21.3 |
+  |Pillow              |        9.1.1 |
+  |pip                  |      21.2.4 |
+  |protobuf              |     4.21.1 |
+  |pycosat              |       0.6.3 |
+  |pycparser            |        2.21 |
+  |PyMetis             |       2020.1 |
+  |pyOpenSSL          |        22.0.0 |
+  |pyparsing           |        3.0.9 |
+  |PySocks              |       1.7.1 |
+  |python-dateutil       |      2.8.2 |
+  |PyYAML               |         6.0 |
+  |requests             |      2.27.1 |
+  |ruamel-yaml-conda    |    0.15.100 |
+  |scikit-learn          |      1.1.1 |
+  |scipy                  |     1.8.1 |
+  |setuptools         |        61.2.0 |
+  |six                |        1.16.0 |
+  |sklearn            |           0.0|
+  |threadpoolctl    |          3.1.0 |
+  |tqdm              |         4.63.0 |
+  |urllib3          |          1.26.8| 
+  |wheel          |            0.37.1|
 
 
   
