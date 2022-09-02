@@ -90,24 +90,24 @@ The configuration dictionary specifies a few properties that are shared by every
 - global_neuron_params is a sub-dictionary of the configuration dictionary
   - v_thr is an entry in the global_neuron_params dictionary, it sets the membrane potential threshold for all neurons in the network
 
-{% include alert terminal='configuration = {}  <br> configuration["'"neuron_type"'"] = "I&F"  <br> configuration["'"global_neuron_params"'"] = {}  <br> configuration["'"global_neuron_params"'"]["'"v_thr"'"] = 4' %}
+// {% include alert terminal='configuration = {}  <br> configuration["'"neuron_type"'"] = "I&F"  <br> configuration["'"global_neuron_params"'"] = {}  <br> configuration["'"global_neuron_params"'"]["'"v_thr"'"] = 4' %}
 
 - Defining the Axons Dictionary
 
     The axons dictionary configures inputs to the network. Axons are synapses connected to neurons in the network that the user can manually send spikes over at a given timestep. Each key in the dictionary is the name of an axon. Each value is a list of two element tuples. Each tuple defines an in-going synapse to a neuron. The first element is the name of a neuron in the network and the second element is the weight of the synaptic connection. Synapse weights must be integers, but they may be positive or negative.
     
-    {% include alert terminal='axons = {'alpha': [('a', 3)], <br> 'beta': [('d', 3)]}' %}
+ //   {% include alert terminal='axons = {'alpha': [('a', 3)], <br> 'beta': [('d', 3)]}' %}
 
 - Defining the Connections Dictionary
     
     The connections dictionary defines the neurons in the network and the connections between them. Each key in the dictionary is the name of a neuron. Of note the names of neurons in the connections dictionary and the names of axons in the axons dictionary must be mutually exclusive. Each value is a list of two element tuples. Each tuple defines a synapse between neurons in the network. The first element is the name of the postsynaptic neuron and the the second element is the weight of the synapse. Synapse weights must be integers but they may be positive or negative. If a neuron has no outgoing synapses it’s synapse list may be left empty.
     
-    {% include alert terminal='connections = {'a': [('b', 1)], <br> 'b': [], <br> 'c': [], <br> 'd': [('c', 1)]}' %}
+  //  {% include alert terminal='connections = {'a': [('b', 1)], <br> 'b': [], <br> 'c': [], <br> 'd': [('c', 1)]}' %}
     
 - Defining the Outputs List
   The outputs list defines the neurons in the network the user wishes to receive spikes from. Each element in the list is the key of a neuron in the connections dictionary.
   
-  {% include alert terminal='outputs = ['a', 'b']' %}
+ // {% include alert terminal='outputs = ['a', 'b']' %}
   
 #### **Initializing a network**
 Once we’ve defined the above dictionaries and list we must pass them to the CRI_network constructor to create a CRI_network object.
@@ -124,7 +124,7 @@ This method will return a list of membrane potentials for all neurons in the net
 #### **Updating Synapse Weights**
 Once the CRI_network class the topology of the network is fixed, that is what axon and neurons are in the network and how they are connected via synapses may not be changed. However it is possible to update the weight of preexisting synapses in the network. This can be done by calling the write_synapse() method of CRI_network. write_synapse() takes three arguments, the presynaptic neuron name, the postsynaptic neuron name, and the new synapse weight.
 
-{% include alert terminal='network.write_synapse('a', 'b', 2)' %}
+//{% include alert terminal='network.write_synapse('a', 'b', 2)' %}
 
 ## **Submitting Jobs to Run on the Hardware**
 ---
