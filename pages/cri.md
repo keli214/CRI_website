@@ -22,13 +22,15 @@ permalink           : "/cri/"
   
 {% include alert text='Note! This project is under active development' %}
   
-## Introduction 
+## Introduction
+  ---
   
   CRI_Simulations is a Python library for interfacing with the INC CRI Neuromorphic comuputing system. 
   
   Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for further information, including how to [install]({{ site.url }}{{ site.baseurl }}/cri/#installation) the project.
   
 ## Usage
+  ---
   
 ### Installation
   
@@ -55,6 +57,7 @@ permalink           : "/cri/"
   Once the proper parameters are set in the two yaml files and justin_test.py a full execution of the network can be run by `python justin_test.py`. This will read in the connections in [connections.txt]({{ site.url }}{{ site.baseurl }}/cri/#inputs), correctly program HBM on the FPGA, and run the network stepwise providing the appropriate input specified in [inputs.txt]({{ site.url }}{{ site.baseurl }}/cri/#inputs) before each timestep. After each timestep of execution the membrane potentials for all neurons in the network will be printed to terminal.
   
 ## Intermediate Representation Format
+  ---
   
 ### Connections
   
@@ -65,6 +68,7 @@ permalink           : "/cri/"
   specify the connection representation
   
 ## Architectural Details
+  ---
   
 ### PCI-e Command Specifications
   
@@ -175,6 +179,7 @@ permalink           : "/cri/"
   
   
 ## API
+  ---
   
 ### compile_network module
   
@@ -475,6 +480,7 @@ permalink           : "/cri/"
   * **n_inputs** (*int*) – The number of axons in the network
   
 ## YAML Specifications
+  ---
   
 ### config.yaml
   
