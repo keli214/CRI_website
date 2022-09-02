@@ -7,18 +7,21 @@
 layout: frontpage
 header: false
 
-widget1:
-  title: "Cinnamoroll"
-  url: 'https://stang126.github.io/CRI/'
-  image: tumblr_f40443bf9aa38d7eaf4a6940521fe55d_e3aeaff6_640.jpg
-widget2:
-  title: "Gert"
-  url: 'https://stang126.github.io/CRI/'
-  image: gertcauwenberghs.png
-widget3:
-  title: "Kuromi"
-  url: 'https://stang126.github.io/CRI/'
-  image: download.jpg
+-widget1:
+  -title: "Cinnamoroll"
+  -url: 'https://stang126.github.io/CRI/'
+  -image: tumblr_f40443bf9aa38d7eaf4a6940521fe55d_e3aeaff6_640.jpg
+  -text: '...'
+-widget2:
+  -title: "Gert"
+  -url: 'https://stang126.github.io/CRI/'
+  -image: gertcauwenberghs.png
+  -text: '...'
+-widget3:
+  -title: "Kuromi"
+  -url: 'https://stang126.github.io/CRI/'
+  -image: download.jpg
+  -text: '...'
 
 #
 # Use the call for action to show a button on the frontpage
