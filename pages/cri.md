@@ -38,9 +38,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Next create a python environment with the necessary dependencies using conda:
   
-  {% include alert terminal='cd CRI_Simulations.git
-  conda env create -f condaenv.yaml
-  conda activate CRI_Simulations' %}
+  {% include alert terminal='cd CRI_Simulations.git <br> conda env create -f condaenv.yaml <br> conda activate CRI_Simulations' %}
   
   Finally, make sure to copy the adxdma_dump binary into the top directory of the CRI_Simulations repository.
   
@@ -48,7 +46,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   A few steps are required in order to run a baisc network.
 
-  First configure the parameters in config.yaml and FPGA_Execution/config.yaml.
+  First configure the parameters in [config.yaml]({{ site.url }}{{ site.baseurl }}/cri/#configyaml) and [FPGA_Execution/config.yaml]({{ site.url }}{{ site.baseurl }}/cri/#fpgaexecutionconfigyaml).
 
   Second specify your input and connections in inputs.txt and connections.txt .
 
@@ -60,7 +58,11 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
 ### Connections
   
+  specify the connection representation
+  
 ### Inputs
+  
+  specify the connection representation
   
 ## Architectural Details {Architectural-Details}
   
