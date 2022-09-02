@@ -54,7 +54,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
 
   Once the proper parameters are set in the two yaml files and justin_test.py a full execution of the network can be run by `python justin_test.py`. This will read in the connections in [connections.txt]({{ site.url }}{{ site.baseurl }}/cri/#inputs), correctly program HBM on the FPGA, and run the network stepwise providing the appropriate input specified in [inputs.txt]({{ site.url }}{{ site.baseurl }}/cri/#inputs) before each timestep. After each timestep of execution the membrane potentials for all neurons in the network will be printed to terminal.
   
-## Intermediate Representation Format {Intermediate-Representation}
+## Intermediate Representation Format
   
 ### Connections
   
