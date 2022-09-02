@@ -284,7 +284,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   `HBM_WRITE_CMD`<br/>
   Type: str
   
-  `HBM_OP_RW
+  `HBM_OP_RW`
   OP code to read/write to hbm vie PCie<br/>
   Type: str
   
@@ -312,30 +312,29 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   `SYN_WEIGHT_BITS`
   Number of bits used to represent synapse weight
   
-  `AXN_BASE_ADDR= _0_`
+  `AXN_BASE_ADDR= 0`
   
-  `HBM_OP_RW= '<em>0200000000000000000000000000000000000000000000000000000000</em>'`
+  `HBM_OP_RW= '0200000000000000000000000000000000000000000000000000000000'`
   
-  `HBM_WRITE_CMD= '*sudo ./adxdma_dmadump wb 0 0*'`
+  `HBM_WRITE_CMD= 'sudo ./adxdma_dmadump wb 0 0'`
   
-  `NRN_BASE_ADDR= *16384*`
+  `NRN_BASE_ADDR= 16384`
   
-  `PTR_ADDR_BITS= *23*`
+  `PTR_ADDR_BITS= 23`
   
-  `PTR_LEN_BITS= *9*`
+  `PTR_LEN_BITS= 9`
   
-  `SYN_ADDR_BITS= *13*`
+  `SYN_ADDR_BITS= 13`
   
-  `SYN_BASE_ADDR= *32768*`
+  `SYN_BASE_ADDR= 32768`
   
-  `SYN_OP_BITS= *3*`
+  `SYN_OP_BITS= 3`
   
-  `SYN_WEIGHT_BITS= *16*`
+  `SYN_WEIGHT_BITS= 16`
   
-  `WRITE= *'01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'*`
+  `WRITE= '01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'`
   
   `create_axon_ptrs()`
-  
   Creates the necessary adxdma_dump commands to program the axon pointers into HBM
   
   Returns <br/>
@@ -346,7 +345,6 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   `create_input_script(*num_timesteps, n_inputs, filename*)`
   
   `create_neuron_ptrs()`
-  
   Creates the necessary data arguments to pass to the adxdma_dump commands to program the neuron pointers into HBM. Data arguments for multiple adxdma_dump commands are seperated by new line characters
   
   Returns  <br/>
@@ -354,16 +352,13 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   * *are seperated by newline characters*
   
   `create_script(*fname*)`
-  
-  Generates the bash file to program HBM for the current network
-  
+  Generates the bash file to program HBM for the current network <br/>
   Generates the bash file needed to program the axon pointers, neuron pointers, and synapses into hbm
   
   Parameters <br/>
   * **fname** (*int*) – The filename to write the script to
   
   `create_synapses()`
-  
   Creates the necessary adxdma_dump commands to program the synapses into HBM
   
   Returns <br/> 
@@ -374,9 +369,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   `gen_input(*time_step*)`
   
   `gen_input2(*time_step*)`
-  
-  Generates the input command for a given time step
-  
+  Generates the input command for a given time step <br/>
   Generates the necesary bash command to run to provide inputs to the network for a given timestep
   
   Parameters <br/>
@@ -388,9 +381,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Return type: str
   
   `txt2script(*cmd_str*)`
-  
-  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command.
-  
+  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command. <br/>
   Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
   
   Parameters <br/>
@@ -409,16 +400,76 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
   
-  Parameters <br/>
+  `Parameters` <br/>
   * **cmd_str** (*str*) – The string of hexidecimal characters to format. The first character represents the hex character containing the MSB
   
-  Returns <br/>
+  `Returns` <br/>
   * **script_txt** – The formated string of bytes
   
-  Return Type: str
+  `Return Type` str
   
   
 ### FPGA_Execution.fpga_controller module
+  
+  {% include alert text='FPGA_Execution.fpga_controller.clear()' %}
+  This function clears the membrane potentials on the fpga.
+  
+  {% include alert text='FPGA_Execution.fpga_controller.execute()' %}
+  Runs a single step of the network and prints “executing a Timestep: ” to the terminal
+  
+  {% include alert text='FPGA_Execution.fpga_controller.execute_step()' %}
+  Duplicate of execute() without printing to terminal
+  
+  {% include alert text='FPGA_Execution.fpga_controller.flush_reads()' %}
+  Flushes any remaining reads from the FPGA
+  
+  **Notes**
+  
+  This function currently does not work and appears to cause issues with successive operations interacting with the FPGA
+  
+  {% include alert text='FPGA_Execution.fpga_controller.load()' %}
+  Reads configuration values from yaml file.
+  
+  Populates the global variables `n_internal`, `n_inputs`, and `inputs` with the values of the corresponding keys in config.yaml. `n_internal` is the number of neurons in the network, `n_inputs` is the number of axons, `inputs` is a list of inputs to the network at different time steps. We may no longer use the input values read from the yaml file.
+  
+  {% include alert text='FPGA_Execution.fpga_controller.read()' %}
+  
+  This function reads in the membrane potentials from the fpga.
+  
+  {% include alert text='FPGA_Execution.fpga_controller.read_membranes(<em>string</em>)' %}
+  Caluclates and prints the membrane potentials corresponding to a PCIe packet from the FPGA
+  
+  Given the packet returned by a PCIe read from URAM this function calculates the neuron index and membrane potential of the neruon represented by the PCIe packet and prints those values to terminal
+  
+  `Parameters` <br/>
+  * **string** (*str*) – The string returned by the PCIe command to read URAM
+  
+  {% include alert text='FPGA_Execution.fpga_controller.step_input(<em>command</em>)' %}
+  
+  This just runs a command formated to be run with bash
+  
+  {% include alert text='FPGA_Execution.fpga_controller.twos_comp(<em>val, bits</em>)' %}
+  Compute the 2’s complement of int value val
+  
+  Takes the int casting of a two’s compliment binary string and the number of bytes in the binary string and returns the value of the two’s compliment representation correspondin to the original binary string.
+  
+  `Parameters` <br/>
+  * **val** (*int*) – the binary stirng to compute the two’s compliment of casted to an int
+  * **bits** (*int*) – the number of bits corresponding to the original binary representation of val
+  
+  `Returns`<br/>
+  * **val** – the value of the original two’s compliment binary string
+  
+  `Return type` int
+  
+  {% include alert text='FPGA_Execution.fpga_controller.write_parameters(<em>neron_model, threshold, n_outputs, n_inputs</em>)' %}
+  Writes the network parameters to the FPGA
+  
+  `Parameters` <br/>
+  * **neuron_model** (*int*) – The type of neuron model to use (1: incremental I&F, 2: leaky I&F, 3: non-leaky I&F)
+  * **threshold** (*int*) – Neuron spike threshold
+  * **n_outputs** (*int*) – The number of neurons in the network
+  * **n_inputs** (*int*) – The number of axons in the network
   
 ## YAML Specifications
   
@@ -428,7 +479,5 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
 </div><!-- /.medium-8.columns -->
 </div><!-- /.row -->
-
-bottom text
 
 
