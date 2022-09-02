@@ -181,6 +181,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   {% include alert text='compile_network.compileNetwork()' %}
   
   Creates simulation and FPGA data structures:
+  
   Creates a representation of the axon pointers, neuron pointers, and synapse weights in HBM memory both in the format used to produce the commands to program the actual FPGA and in the format expected by the hardware simulator.
   
   `inputdict`
@@ -197,12 +198,13 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   {% include alert text='compile_network.external_input_optimization()' %}
   
-  {% include alert text="compile_network.load_network(input='test_inputs.txt', connex='test_connectivity.txt', output='out.txt')" %}
+  {% include alert text="compile_network.load_network(<em>input='test_inputs.txt', connex='test_connectivity.txt', output='out.txt'</em>)" %}
   
   Loads the network specification.
+  
   This function loads the inputs and connections specified for the network. Also determines the number of FPGA cores to be used.
   
-  `Parameters
+  `Parameters`
   * **input** *(str, optional)* – Path to file specifying network inputs. (the default is the path in config.yaml)
   * **connex** *(str, optional)* – Path to file specifying network connections. (the default is the path in config.yaml)
   
@@ -215,10 +217,11 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   {% include alert text='compile_network.main()' %}
   
-  {% include alert text='compile_network.main()' %}
+  {% include alert text='compile_network.map_to_hbm(<em>axons, network, input, assignment, n_cores</em>)' %}
   
-  {% include alert text='compile_network.main()' %}
+  {% include alert text='compile_network.map_to_hbm_fpga(<em>axons, network, input, assignment, n_cores, to_fpga=True</em>)' %}
   Creates HBM Data Structure
+  
   Creates a representation of the axon pointers, neuron pointers, and synapse weights in HBM memory
   
   `Parameters`
@@ -230,26 +233,221 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   *  **to_fpga** *(bool, optional)* – This parameter is depracated and has no effect. (the default is True)
   
   `Returns`
+  
   **hbm** – Dictionary specifying the structure of data in memory for each core. Key: core number Value: tuple of (pointer,data) where pointer is a numpy array of tuples representing offsets into hbm memory and data is a list of lists tuples representing synapses.
   
   `Return type`
+  
   dict
   
-  {% include alert text='compile_network.partition(network, n_cores)' %}
+  {% include alert text='compile_network.partition(<em>network, n_cores</em>)' %}
   Creates adjacency list
+  
   Uses the partitioning algorithm to partition the neurons in the network and return core assignments
   
   `Parameters`
-  *  **network ** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
+  *  **network** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
   *  **n_cores** *(int)* – The number of cores peresent in the CRI system
   
   `Returns`
+  
   Dictionary specifying neurons mapped to each core. Key: core number Value: tuple of (neuron number, core number)
   
   `Return type`
+  
   dict
   
 ### FPGA_Execution.fpga_compiler module
+  
+  {% include alert text='<em>class</em> FPGA_Execution.fpga_compiler.fpga_compiler(<em>data, N_neurons</em>)' %}
+  
+  Bases: `object`
+  
+  Produces the needed adxdma dump scripts of a given network to program HBM
+  
+  `input`
+  
+  The inputs to the network for each timestep. Key, timestep value, list of axons
+  
+  Type: dict
+  
+  `axon_ptrs`
+  
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.
+  
+  Type: dict
+  
+  `Each tuple is (start row, end row).`
+  
+  `neuron_ptrs`
+  
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.
+  
+  Type: numpy array
+  
+  `Each tuple is (start row, end row).`
+  
+  `synapses`
+  
+  List of tuples corresponding to synapses. Each tuple is (oncore/offcore bit, synapse address (row index of destination neuron pointer in HBM calculated as floor(destination neuron index / number of neuron groups)), weight)
+  
+  Type: list
+  
+  `HBM_WRITE_CMD`
+  
+  Type: str
+  
+  `HBM_OP_RW`
+  
+  OP code to read/write to hbm vie PCie
+
+  Type: str
+  
+  `NRN_BASE_ADDR`
+  
+  Starting address of neuron pointers in HBM
+  
+  Type: int
+  
+  `SYN_BASE_ADDR`
+  
+  Starting address of synapses in HBM
+  
+  Type: int
+  
+  `PTR_ADDR_BITS`
+  
+  Number of bits used to represent pointer starting address
+  
+  Type: int
+  
+  `PTR_LEN_BITS`
+  
+  Number of bits used to represent the number of rows of synapses a pointer corresponds to 
+  
+  `SYN_OP_BITS`
+  
+  Number of bits used to represent synapse opcode
+  
+  `SYN_ADDR_BITS`
+  
+  Number of bits used to represent synapse address
+  
+  `SYN_WEIGHT_BITS`
+  
+  Number of bits used to represent synapse weight
+  
+  `AXN_BASE_ADDR= *0*`
+  
+  `HBM_OP_RW= '0200000000000000000000000000000000000000000000000000000000'`
+  
+  `HBM_WRITE_CMD= '*sudo ./adxdma_dmadump wb 0 0*'`
+  
+  `NRN_BASE_ADDR= *16384*`
+  
+  `PTR_ADDR_BITS= *23*`
+  
+  `PTR_LEN_BITS= *9*`
+  
+  `SYN_ADDR_BITS= *13*`
+  
+  `SYN_BASE_ADDR= *32768*`
+  
+  `SYN_OP_BITS= *3*`
+  
+  `SYN_WEIGHT_BITS= *16*`
+  
+  `WRITE= *'01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'*`
+  
+  `create_axon_ptrs()`
+  
+  Creates the necessary adxdma_dump commands to program the axon pointers into HBM
+  
+  Returns:  *script* – The bash commands to run to program the axon pointers in HBM
+  
+  Return type:
+  * str
+  
+  `create_input_script(*num_timesteps, n_inputs, filename*)`
+  
+  `create_neuron_ptrs()`
+  
+  Creates the necessary data arguments to pass to the adxdma_dump commands to program the neuron pointers into HBM. Data arguments for multiple adxdma_dump commands are seperated by new line characters
+  
+  Returns: 
+  * **script** (*str*) – The data arguments to provide to a series of adxdma_dump commands. Data arguments for successive adxdma_dump commands
+  * *are seperated by newline characters*
+  
+  `create_script(*fname*)`
+  
+  Generates the bash file to program HBM for the current network
+  
+  Generates the bash file needed to program the axon pointers, neuron pointers, and synapses into hbm
+  
+  Parameters
+  * **fname** (*int*) – The filename to write the script to
+  
+  `create_synapses()`
+  
+  Creates the necessary adxdma_dump commands to program the synapses into HBM
+  
+  Returns
+  * **script** – The bash commands to run to program the synapses in HBM
+  
+  Return type
+  * str
+  
+  `gen_input(*time_step*)`
+  
+  `gen_input2(*time_step*)`
+  
+  Generates the input command for a given time step
+  
+  Generates the necesary bash command to run to provide inputs to the network for a given timestep
+  
+  Parameters
+  * **time_step** (*int*) – The timestep you wish to generate the input command for
+  
+  Returns
+  * **command** – The bash command to run to send the input to the FPGA
+  
+  Return type
+  * str
+  
+  `txt2script(*cmd_str*)`
+  
+  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command.
+  
+  Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
+  
+  Parameters
+  * **cmd_str** (*str*) – The string of hexidecimal characters to format. The first character represents the hex character containing the MSB
+  
+  Returns
+  * script_txt – The formated string of bytes
+  
+  Return type
+  * str
+  
+  {% include alert text='FPGA_Execution.fpga_compiler.main()' %}
+  
+  {% include alert text='FPGA_Execution.fpga_compiler.text2script(<em>self, cmd_str</em>)' %}
+  
+  Converts a string of hex characters into the correct format to suppyl to the adxdma dump command.
+  
+  Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
+  
+  Parameters
+  * **cmd_str** (*str*) – The string of hexidecimal characters to format. The first character represents the hex character containing the MSB
+  
+  Returns
+  * **script_txt** – The formated string of bytes
+  
+  Return Type
+  * str
+  
+  
+  
   
 ### FPGA_Execution.fpga_controller module
   
