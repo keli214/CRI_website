@@ -178,105 +178,75 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
 ### compile_network module
   
+  {% include alert text='compile_network.compileNetwork()' %}
   
- #### compile_network.compileNetwork()
-  
-  Creates simulation and FPGA data structures: 
-  
+  Creates simulation and FPGA data structures:
   Creates a representation of the axon pointers, neuron pointers, and synapse weights in HBM memory both in the format used to produce the commands to program the actual FPGA and in the format expected by the hardware simulator.
   
-  {% include alert text='inputdict' %}
-  
+  `inputdict`
   Dictionary specifying inputs to the network. Key, Time Step Value, TODO are these axons or neurons
   
-  {% include alert info='hbmdict' %}
-  
+  `hbmdict`
   Dictionary specifying the hbm structure for each core expected by the hardware simulator. Key: core number Value: tuple of (pointer,data) where pointer is a numpy array and data is a list of lists of tuples.
   
-  {% include alert info='outputsdict' %}
-  
+  `outputsdict`
   TODO: I’m not sure what the outputs are for
   
-  {% include alert info='axonLengthint' %}
-  
+  `axonLengthint`
   number of axons specified in the network
   
-  #### compile_network.external_input_optimization()
+  {% include alert text='compile_network.external_input_optimization()' %}
   
-  #### compile_network.load_network(input='test_inputs.txt', connex='test_connectivity.txt', output='out.txt')
+  {% include alert text="compile_network.load_network(input='test_inputs.txt', connex='test_connectivity.txt', output='out.txt')" %}
   
   Loads the network specification.
-  
   This function loads the inputs and connections specified for the network. Also determines the number of FPGA cores to be used.
   
-  {% include alert text='Parameters' %}
-  
+  `Parameters
   * **input** *(str, optional)* – Path to file specifying network inputs. (the default is the path in config.yaml)
-  
   * **connex** *(str, optional)* – Path to file specifying network connections. (the default is the path in config.yaml)
   
-  {% include alert text='Returns' %}
-  
+  `Returns`
   * **axons** *(dict)* – Dictionary specifying axons in the network. Key: axon number Value: Synapse Weights
-
   * **connections** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
-
   * **inputs** *(dict)* – Dictionary specifying inputs to the network. Key, Time Step Value, axon
-
   * **outputs** *(dict)* – TODO: I’m not sure what the outputs are for. I belive it’s unused
-
   * **ncores** *(int)* – The number of cores peresent in the CRI system
   
-  #### compile_network.main()
+  {% include alert text='compile_network.main()' %}
   
-  #### compile_network.map_to_hbm(axons, network, input, assignment, n_cores)
+  {% include alert text='compile_network.main()' %}
   
-  #### compile_network.map_to_hbm_fpga(axons, network, input, assignment, n_cores, to_fpga=True)
-  
+  {% include alert text='compile_network.main()' %}
   Creates HBM Data Structure
-  
   Creates a representation of the axon pointers, neuron pointers, and synapse weights in HBM memory
   
-  {% include alert text='Parameters' %}
-  
+  `Parameters`
   * **axons** *(dict)* – Dictionary specifying axons in the network. Key: axon number Value: Synapse Weights
-  
   *  **network** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
-  
   *  **inputs** *(dict)* – Dictionary specifying inputs to the network. Key: Time Step Value: TODO are these axons or neurons
-  
   *  **assignment** *(dict)* – Dictionary specifying neurons mapped to each core. Key: core number Value: tuple of (neuron number, core number)
-  
   *  **n_cores** *(int)* – The number of cores peresent in the CRI system
-  
   *  **to_fpga** *(bool, optional)* – This parameter is depracated and has no effect. (the default is True)
   
-  {% include alert text='Returns' %}
-  
+  `Returns`
   **hbm** – Dictionary specifying the structure of data in memory for each core. Key: core number Value: tuple of (pointer,data) where pointer is a numpy array of tuples representing offsets into hbm memory and data is a list of lists tuples representing synapses.
   
-  {% include alert text='Return type' %}
-  
+  `Return type`
   dict
   
-  #### compile_network.partition(network, n_cores)
-  
+  {% include alert text='compile_network.partition(network, n_cores)' %}
   Creates adjacency list
-  
   Uses the partitioning algorithm to partition the neurons in the network and return core assignments
   
-  {% include alert text='Parameters' %}
-  
+  `Parameters`
   *  **network ** *(dict)* – Dictionary specifying neurons in the network. Key: Neuron Number Value: Synapse Weights
-  
   *  **n_cores** *(int)* – The number of cores peresent in the CRI system
   
-  {% include alert text='Returns' %}
-  
+  `Returns`
   Dictionary specifying neurons mapped to each core. Key: core number Value: tuple of (neuron number, core number)
   
-  {% include alert text='Return type' %}
-  
+  `Return type`
   dict
   
 ### FPGA_Execution.fpga_compiler module
