@@ -6,7 +6,7 @@
 #
 layout: frontpage
 
-hehe 
+
 
 #
 # Use the call for action to show a button on the frontpage
@@ -36,3 +36,4 @@ homepage: true
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
+hehe
