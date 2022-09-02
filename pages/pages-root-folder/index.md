@@ -5,8 +5,20 @@
 # this work, you have to use › layout: frontpage
 #
 layout: frontpage
+header: false
 
-
+widget1:
+  title: "Cinnamoroll"
+  url: 'https://stang126.github.io/CRI/'
+  image: tumblr_f40443bf9aa38d7eaf4a6940521fe55d_e3aeaff6_640.jpg
+widget2:
+  title: "Gert"
+  url: 'https://stang126.github.io/CRI/'
+  image: gertcauwenberghs.png
+widget3:
+  title: "Kuromi"
+  url: 'https://stang126.github.io/CRI/'
+  image: download.jpg
 
 #
 # Use the call for action to show a button on the frontpage
@@ -26,10 +38,5 @@ permalink: /index.html
 homepage: true
 ---
 
-<div id="videoModal" class="reveal-modal large" data-reveal="">
-  <div class="flex-video widescreen vimeo" style="display: block;">
-    <iframe width="1280" height="720" src="https://www.youtube.com/embed/3b5zCFSmVvU" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
+
 hehe
