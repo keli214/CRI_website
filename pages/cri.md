@@ -262,38 +262,38 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   Produces the needed adxdma dump scripts of a given network to program HBM
   
   `input`
-  The inputs to the network for each timestep. Key, timestep value, list of axons </br>
+  The inputs to the network for each timestep. Key, timestep value, list of axons <br/>
   Type: dict
   
   `axon_ptrs`
-  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.</br>
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon.<br/>
   Type: dict
   
   `Each tuple is (start row, end row).`
   
   `neuron_ptrs`
-  Array of tuples pointing to the rows containing the synapses for the corresponding Axon. </br>
+  Array of tuples pointing to the rows containing the synapses for the corresponding Axon. <br/>
   Type: numpy array
   
   `Each tuple is (start row, end row).`
   
   `synapses`
-  List of tuples corresponding to synapses. Each tuple is (oncore/offcore bit, synapse address (row index of destination neuron pointer in HBM calculated as floor(destination neuron index / number of neuron groups)), weight) </br>
+  List of tuples corresponding to synapses. Each tuple is (oncore/offcore bit, synapse address (row index of destination neuron pointer in HBM calculated as floor(destination neuron index / number of neuron groups)), weight) <br/>
   Type: list
   
-  `HBM_WRITE_CMD`</br>
+  `HBM_WRITE_CMD`<br/>
   Type: str
   
   `HBM_OP_RW
-  OP code to read/write to hbm vie PCie </br>
+  OP code to read/write to hbm vie PCie<br/>
   Type: str
   
   `NRN_BASE_ADDR`
-  Starting address of neuron pointers in HBM </br>
+  Starting address of neuron pointers in HBM <br/>
   Type: int
   
   `SYN_BASE_ADDR`
-  Starting address of synapses in HBM </br>
+  Starting address of synapses in HBM <br/>
   Type: int
   
   `PTR_ADDR_BITS`
@@ -312,7 +312,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   `SYN_WEIGHT_BITS`
   Number of bits used to represent synapse weight
   
-  `AXN_BASE_ADDR= <em>0</em>`
+  `AXN_BASE_ADDR= _0_`
   
   `HBM_OP_RW= '<em>0200000000000000000000000000000000000000000000000000000000</em>'`
   
@@ -338,7 +338,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Creates the necessary adxdma_dump commands to program the axon pointers into HBM
   
-  Returns:
+  Returns <br/>
   * *script* – The bash commands to run to program the axon pointers in HBM
   
   Return type: str
@@ -349,7 +349,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Creates the necessary data arguments to pass to the adxdma_dump commands to program the neuron pointers into HBM. Data arguments for multiple adxdma_dump commands are seperated by new line characters
   
-  Returns: 
+  Returns  <br/>
   * **script** (*str*) – The data arguments to provide to a series of adxdma_dump commands. Data arguments for successive adxdma_dump commands
   * *are seperated by newline characters*
   
@@ -359,14 +359,14 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Generates the bash file needed to program the axon pointers, neuron pointers, and synapses into hbm
   
-  Parameters
+  Parameters <br/>
   * **fname** (*int*) – The filename to write the script to
   
   `create_synapses()`
   
   Creates the necessary adxdma_dump commands to program the synapses into HBM
   
-  Returns
+  Returns <br/> 
   * **script** – The bash commands to run to program the synapses in HBM
   
   Return type: str
@@ -379,10 +379,10 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Generates the necesary bash command to run to provide inputs to the network for a given timestep
   
-  Parameters
+  Parameters <br/>
   * **time_step** (*int*) – The timestep you wish to generate the input command for
   
-  Returns
+  Returns <br/>
   * **command** – The bash command to run to send the input to the FPGA
   
   Return type: str
@@ -393,10 +393,10 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
   
-  Parameters
+  Parameters <br/>
   * **cmd_str** (*str*) – The string of hexidecimal characters to format. The first character represents the hex character containing the MSB
   
-  Returns
+  Returns <br/>
   * script_txt – The formated string of bytes
   
   Return type: str
@@ -409,10 +409,10 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   Given a string of hex characters with the left most character containing the MSB create a string of pairs of hex characters representing bytes with the leftmost byte contanining the LSB in the format expected by the adxdma_dmadump binary for the data argument.
   
-  Parameters
+  Parameters <br/>
   * **cmd_str** (*str*) – The string of hexidecimal characters to format. The first character represents the hex character containing the MSB
   
-  Returns
+  Returns <br/>
   * **script_txt** – The formated string of bytes
   
   Return Type: str
