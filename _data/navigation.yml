@@ -30,6 +30,10 @@
 - title: "Search"
   url: "/search/"
   side: right
+  
+- title: "GitHub"
+  url: "https://github.com/Integrated-Systems-Neuroengineering"
+  side: right
 
 - title: "Contact"
   url: "https://isn.ucsd.edu/index.php"
