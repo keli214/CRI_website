@@ -34,9 +34,21 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   To use CRI_Simulation, first clone the repository from git:
   
+  {% include alert terminal='git clone git@github.com:Integrated-Systems-Neuroengineering/CRI_Simulations.git' %}
+  
   ```
   git clone git@github.com:Integrated-Systems-Neuroengineering/CRI_Simulations.git
   ```
+  
+  Next create a python environment with the necessary dependencies using conda:
+  
+  ``` 
+  cd CRI_Simulations.git
+  conda env create -f condaenv.yaml
+  conda activate CRI_Simulations
+  ```
+  
+  Finally, make sure to copy the adxdma_dump binary into the top directory of the CRI_Simulations repository.
   
 ### Basic Usage
   
