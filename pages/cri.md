@@ -68,7 +68,7 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
 ### PCI-e Command Specifications
   
- ** Write Network Parameters**
+ **Write Network Parameters**
   
   | Bits  | 0:16 | 17:33 |  34:69 |  70:71 | 72:503 |  504:511 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -80,52 +80,51 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Content  | Zeros  |  1  |  Zeros  |  One Hot Encoding of Active Axons  |
   
-**  Request Read From HBM**
+**Request Read From HBM**
   
-   | Bits  | 0:255 | 256:278 |  279 |  280:503 |  504:511 |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Content  | Zeros  |  Row Address  |  0  |  Zeros  |  0x02  |
-  
+  | Bits  | 0:255 | 256:278 |  279  |  280:503 |  504:511 |
+  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+  |  Content  | Zeros  |  Row Address  |  0  |  Zeros  |  0x02  |
   
   **Flush Read From HBM**
   
-    | Bits  | 0:8 |
-| ------------- | ------------- |
-| Content  | 0x04  |
+  |  Bits  |  0:8  |
+  | --- | --- |
+  |  Content  |  0x04  |
 
   Format of the read flushed from HBM is as follows: 
   
-    | Bits  | 0:255 | 256:495 |  496:511 |
+  | Bits  | 0:255 | 256:495 |  496:511 |
 | ------------- | ------------- | ------------- | ------------- |
 | Content  |  Data  |  Zeros  |  0xBBBB  |
 
   **Write HBM**
   
-     | Bits  | 0:255 | 256:278 |  279 |  280:503 |  504:511 |
+  | Bits  | 0:255 | 256:278 |  279 |  280:503 |  504:511 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Content  | Data  |  Row Address  |  1  |  Zeros  |  0x02  |
   
   **Request Read from URAM**
   
-       | Bits  | 0:35 | 36:48 |  49:52 |  53 |  504:511 |
+  | Bits  | 0:35 | 36:48 |  49:52 |  53 |  504:511 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Content  | Zeros  |  Neuron Row Address  |  Neuron Column Address  |  0  |  0x03  |
   
   **Flush Read From URAM**
   
-      | Bits  | 0:8 |
+  | Bits  | 0:8 |
 | ------------- | ------------- |
 | Content  | 0x04  |
   
   Format of the read flushed from URAM is as follows:
   
-         | Bits  | 0:35 | 36:48 |  49:52 |  53:495 |  496:511 |
+  | Bits  | 0:35 | 36:48 |  49:52 |  53:495 |  496:511 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Content  | Membrane Potential  |  Neuron Row  |  Neuron Column  |  Zeros  |  0xCCCC  |
   
   **Execute Time Step**
   
-        | Bits  | 0:503 | 504:511 |
+  | Bits  | 0:503 | 504:511 |
 | ------------- | ------------- | ------------- |
 | Content  | Zeros  | 0x01  |
   
@@ -137,7 +136,45 @@ Check out the [Usage]({{ site.url }}{{ site.baseurl }}/cri/#usage) section for f
   
   HBM is segmented into rows holding eight axons/neurons/synapses each. Since we arrange axons/neurons/synapses into groups of 16 each group of 16 axons/neurons/synapses occupies two adjacent rows in HBM. Within those 16 neuron groups axon and neuron pointers are arranged from zero to 15 where as synapses are arranged from 15 to zero. Axon and neuron pointers contain a starting address that refers to a row in the synapse space of HBM and a length value that determines the number of rows in the synapse section that contain the synapses for that neuron. Within the rows pointed to by an axon/neuron pointer synapses are arranged based on the index of their destination neuron. That is within a two row 16 synapse group synapses are placed at an index based of of their destination neuron modulo 16. So for example if the axon zero pointer points to Rows 0 and 1 of the synapse section and axon 0 has a single synapse to neuron 18 the synapse would be stored in the synapse two slot of the first two rows of the synapse portion of HBM.
   
-## API {API}
+  | **Axon Pointers**  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Axon 0 Pointer  | Axon 1 Pointer  |  Axon 2 Pointer  |  Axon 3 Pointer  |  Axon 4 Pointer  |  Axon 5 Pointer  |  Axon 6 Pointer  |  Axon 7 Pointer  |
+  | Axon 8 Pointer  | Axon 9 Pointer  |  Axon 10 Pointer  |  Axon 11 Pointer  |  Axon 12 Pointer  |  Axon 13 Pointer  |  Axon 14 Pointer  |  Axon 15 Pointer  |
+  | Axon 16 Pointer  | Axon 17 Pointer  |  Axon 18 Pointer  |  Axon 19 Pointer  |  Axon 20 Pointer  |  Axon 21 Pointer  |  Axon 22 Pointer  |  Axon 23 Pointer  |
+  | Axon 24 Pointer  | Axon 25 Pointer  |  Axon 26 Pointer  |  Axon 27 Pointer  |  Axon 28 Pointer  |  Axon 29 Pointer  |  Axon 30 Pointer  |  Axon 31 Pointer  |
+  | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ |
+  | **Neuron Pointers**  |  |  |  |  |  |  |  |
+  | Neuron 0 Pointer  | Neuron 1 Pointer  |  Neuron 2 Pointer  |  Neuron 3 Pointer  |  Neuron 4 Pointer  |  Neuron 5 Pointer  |  Neuron 6 Pointer  |  Neuron 7 Pointer  |
+  | Neuron 8 Pointer  | Neuron 9 Pointer  |  Neuron 10 Pointer  |  Neuron 11 Pointer  |  Neuron 12 Pointer  |  Neuron 13 Pointer  |  Neuron 14 Pointer  |  Neuron 15 Pointer  |
+  | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ |
+  | **Synapses**  |  |  |  |  |  |  |  |
+  | Synapse 15  | Synapse 14  |  Synapse 13  |  Synapse 12  |  Synapse 11  |  Synapse 10  |  Synapse 9  |  Synapse 8  |
+  | Synapse 7  | Synapse 6  |  Synapse 5  |  Synapse 4  |  Synapse 3  |  Synapse 2  |  Synapse 1  |  Synapse 0  |
+  | Synapse 15  | Synapse 14  |  Synapse 13  |  Synapse 12  |  Synapse 11  |  Synapse 10  |  Synapse 9  |  Synapse 8  |
+  | Synapse 7  | Synapse 6  |  Synapse 5  |  Synapse 4  |  Synapse 3  |  Synapse 2  |  Synapse 1  |  Synapse 0  |
+  
+  Within the overall HBM layout axon pointers, neuron pointers, and synapses are represented as 32 bits of data arranged as follows:
+  
+  **Axon and Neuron Pointers**
+  
+  | Bits  | 0:22 | 23:31 |
+| ------------- | ------------- | ------------- |
+| Content  | Pointer Address  | Pointer Length  |
+
+  **Synapse Format**
+  
+  | Bits  | 0:15 | 16:28 |  29:31 |
+| ------------- | ------------- | ------------- | ------------- |
+| Content  | Weight | Address  | Opcode  |
+  
+  **Spike Format**
+  
+  | Bits  | 0:15 | 16:28 |  29:31 |
+| ------------- | ------------- | ------------- | ------------- |
+| Content  | Spike Data  |  Address  | Opcode  |
+  
+  
+## API
   
 ### compile_network module
   
