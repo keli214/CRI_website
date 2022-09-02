@@ -57,7 +57,6 @@
 
 .alert-box {
   font-family: $font-family-sans-serif;
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
 }
   .alert-box p {
     margin-bottom: 0;
@@ -73,20 +72,19 @@
   .alert-box.terminal {
     background: #e1f3fa; 
     color: #000; 
-    border-color: scale-color($grey-12, $lightness: -14%);
+    border-color: #cbeaf6;
     font-family: $font-family-monospace;
   }
   .alert-box.terminal::before {
     content: "$ ";
-    color: $ci-6;
+    color: #24a2d2;
     float: left;
-    margin: .25em .5em 0 0;
+    margin: .25em .5em 2em 0;
   }
   .alert-box.text {
-    background-color: $grey-2;
-    text-shadow: 0px 0px 0px rgba(0,0,0,0.9);
-    border-color: scale-color($grey-2, $lightness: -14%);
-    color: $grey-12;
+    background-color: #9fdaf0;
+    border-color: #89d0eb;
+    color: #000;
   }
 
 
