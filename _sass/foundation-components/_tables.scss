@@ -85,6 +85,8 @@ $table-margin-bottom: rem-calc(20) !default;
         font-size: $table-head-font-size;
         font-weight: $table-head-font-weight;
         color: $table-head-font-color;
+        border: 0.5px solid #b5e3f4;
+      border-collapse: collapse;
       }
     }
   }
