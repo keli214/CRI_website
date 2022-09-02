@@ -49,21 +49,16 @@ L2S is a Python library for interacting with the ISN CRI project hosted at SDSC.
 ---
 ### **Simple Installation**
 
-    {% include alert terminal='
-    pip install l2s
-    ' %}
+    {% include alert terminal='pip install l2s' %}
+    
 ### **Development Installation**
 
 - First install [Poetry](https://python-poetry.org/)
   - If Poetry installs in may be necessary to install an alternative Python distribution such as [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 - Then clone this repository
-   {% include alert terminal='
-   git clone https://github.com/Integrated-Systems-Neuroengineering/L2S.git
-   ' %}
+   {% include alert terminal='git clone https://github.com/Integrated-Systems-Neuroengineering/L2S.git' %}
 - Next you will need to clone the cri-simulations repository into the same directory you just cloned this repository into
-    {% include alert terminal='
-    git clone https://github.com/Integrated-Systems-Neuroengineering/CRI_Simulations_Public.git
-    ' %}
+    {% include alert terminal='git clone https://github.com/Integrated-Systems-Neuroengineering/CRI_Simulations_Public.git' %}
 - cd into the L2S repo you cloned and install the needed dependencies. Resolving dependencies may take a while.
     {% include alert terminal='
     cd L2S
@@ -91,11 +86,7 @@ The configuration dictionary specifies a few properties that are shared by every
 - neuron_type specifies the type of neuron model used to calculate membrane potentials
 - global_neuron_params is a sub-dictionary of the configuration dictionary
   - v_thr is an entry in the global_neuron_params dictionary, it sets the membrane potential threshold for all neurons in the network
-  {% include alert terminal='
-  configuration = {}
-  configuration['neuron_type'] = "I&F"
-  configuration['global_neuron_params'] = {}
-  configuration['global_neuron_params']['v_thr'] = 4
+  {% include alert terminal=' configuration = {}  <br> configuration['neuron_type'] = "I&F"  <br> configuration['global_neuron_params'] = {}  <br> configuration['global_neuron_params']['v_thr'] = 4
   ' %}
 - Defining the Axons Dictionary
 
