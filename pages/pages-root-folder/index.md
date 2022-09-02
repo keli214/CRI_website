@@ -10,7 +10,7 @@ header: false
 widget1:
   title: "Cinnamoroll"
   url: 'https://stang126.github.io/CRI/'
-  image: widget-1-302x182.jpg
+  image_url: download.jpg
   text: '...'
 widget2:
   title: "Gert"
