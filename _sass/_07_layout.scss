@@ -341,7 +341,8 @@ body.video cite { color: #fff; }
 .t10 { margin-top: 10px !important; }
 .t15 { margin-top: 15px !important; }
 .t20 { margin-top: 20px !important; }
-.t30 { margin-top: 30px !important; }
+.t30 { margin-top: 30px !important; position: relative;
+    min-height: 57vh;}
 .t50 { margin-top: 50px !important; }
 .t60 { margin-top: 60px !important; }
 .t70 { margin-top: 70px !important; }
