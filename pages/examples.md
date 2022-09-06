@@ -22,13 +22,48 @@ permalink           : "/examples/"
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
 ## Hehe  {#hehe}
-text
-  
-## Hehehe  {#hehehe}
-text  
   ```
   print('hello world');
   ```
+  
+## Hehehe  {#hehehe}
+  ```
+  print('hello world');
+  ``` 
+ 
+  
+  <div class="row">
+    <div class="small-12 columns">
+        <h3>Large Displays Four Columns</h3>
+    </div><!-- /.small-12.columns -->
+</div>
+
+<div class="row">
+  <div class="large-3 columns">
+    <a href="https://stang126.github.io/CRI/"><img src="https://i.ytimg.com/vi/NwNpVohwfQg/maxresdefault.jpg" height="200"></a>
+      
+    Bottom text 1 <br>
+    <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
+  </div>
+  <div class="large-3 columns">
+    <a href="https://stang126.github.io/CRI/"><img src="https://www.uctv.tv/images//rokupicts/27918.jpg" height="200"></a>
+      
+    Bottom text 2 <br>
+    <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
+  </div>
+  <div class="large-3 columns">
+    <a href="https://stang126.github.io/CRI/"><img src="https://live.staticflickr.com/7279/6983375464_dccbda484f_b.jpg" height="200"></a>
+      
+    Bottom text 3 <br>
+    <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
+  </div>
+  <div class="large-3 columns">
+    <a href="https://stang126.github.io/CRI/"><img src="https://be.ucsd.edu/sites/be.ucsd.edu/files/styles/media_library/public/gertcauwenberghs.png" height="200"></a>
+      
+    Bottom text 4 <br>
+    <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
+  </div>
+</div>
   
   <div class="row">
     <div class="small-12 columns">
@@ -70,7 +105,7 @@ text
   <div class="large-6 columns">
     <a href="https://stang126.github.io/CRI/"><img src="https://i.pinimg.com/736x/11/97/bd/1197bdeda7b4585fa36a5618f738dcf7.jpg" height="200"></a>
       
-    Bottom text 2 <br>
+    Bottom text 1 <br>
     <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
   </div>
   <div class="large-6 columns">
