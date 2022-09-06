@@ -47,13 +47,13 @@ text
   </div>
   <div class="large-4 columns">
     
-    <a href="https://stang126.github.io/CRI/"><img src="<img src="https://www.kindpng.com/picc/m/343-3433093_transparent-cinnamoroll-png-cartoon-png-download.png" height="200"></a>
+    <a href="https://stang126.github.io/CRI/"><img src="https://www.kindpng.com/picc/m/343-3433093_transparent-cinnamoroll-png-cartoon-png-download.png" height="200"></a>
       
     Bottom text 2 <br>
     <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
   </div>
   <div class="large-4 columns">
-      <a href="https://stang126.github.io/CRI/"><img src="<img src="https://static.wikia.nocookie.net/umineko/images/c/cd/Hello_kitty_crew_%285%29.png/" height="200"></a>
+      <a href="https://stang126.github.io/CRI/"><img src="https://static.wikia.nocookie.net/umineko/images/c/cd/Hello_kitty_crew_%285%29.png/" height="200"></a>
     Bottom text 3 <br>
     <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
   </div>
@@ -68,13 +68,13 @@ text
 
 <div class="row">
   <div class="large-6 columns">
-    <a href="https://stang126.github.io/CRI/"><img src="<img src="https://i.pinimg.com/736x/11/97/bd/1197bdeda7b4585fa36a5618f738dcf7.jpg" height="200"></a>
+    <a href="https://stang126.github.io/CRI/"><img src="https://i.pinimg.com/736x/11/97/bd/1197bdeda7b4585fa36a5618f738dcf7.jpg" height="200"></a>
       
     Bottom text 2 <br>
     <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
   </div>
   <div class="large-6 columns">
-      <a href="https://stang126.github.io/CRI/"><img src="<img src="https://www.kindpng.com/picc/m/453-4530663_cyber-transparent-and-kuromi-image-kuromi-sanrio-hd.png" height="200"></a>
+      <a href="https://stang126.github.io/CRI/"><img src="https://www.kindpng.com/picc/m/453-4530663_cyber-transparent-and-kuromi-image-kuromi-sanrio-hd.png" height="200"></a>
       
     Bottom text 2 <br>
     <a href="https://stang126.github.io/CRI/">Learn More Here &#x27A1;</a>
