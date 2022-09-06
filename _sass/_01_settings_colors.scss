@@ -68,6 +68,16 @@ $grey-15            : #171717;
 $grey-16            : #0B0B0B;
 
 
+/* Blue and Pink Colours
+------------------------------------------------------------------- */
+
+$blue-1             : #A0D8EE; 
+$blue-2             : #54C1EF;
+$black-1            : #000;
+$white-1            : #fff;
+$pink-1             : #fae1f3l;
+
+
 
 /* Topbar-Navigation
 ------------------------------------------------------------------- */
@@ -76,52 +86,52 @@ $topbar-bg-color    : $body-bg;
 $topbar-bg          : $topbar-bg-color;
 
 
-$topbar-dropdown-toggle-color: #A0D8EE;
+$topbar-dropdown-toggle-color: $blue-1;
 
-$topbar-link-color  : #000;
-$topbar-link-color-hover: #000;
-$topbar-link-color-active: #000;
-$topbar-link-color-active-hover: #000;
+$topbar-link-color  : $black-1;
+$topbar-link-color-hover: $black-1;
+$topbar-link-color-active: $black-1;
+$topbar-link-color-active-hover: $black-1;
 
-$topbar-dropdown-label-color: #A0D8EE;
-$topbar-dropdown-link-bg-hover: #54C1EF;
+$topbar-dropdown-label-color: $blue-1;
+$topbar-dropdown-link-bg-hover: $blue-2;
 
-$topbar-link-bg-active: #54C1EF; // Active Navigation Link
-$topbar-link-bg-hover: #54C1EF;
-$topbar-link-bg-active-hover: #A0D8EE;
+$topbar-link-bg-active: $blue-2; // Active Navigation Link
+$topbar-link-bg-hover: $blue-2;
+$topbar-link-bg-active-hover: $blue-1;
 
 
-$topbar-dropdown-bg: #54C1EF; // Background Mobile Navigation
-$topbar-dropdown-link-color: #000;
-$topbar-dropdown-link-bg: #A0D8EE;
+$topbar-dropdown-bg: $blue-2; // Background Mobile Navigation
+$topbar-dropdown-link-color: $black-1;
+$topbar-dropdown-link-bg: $blue-1;
 
-$topbar-menu-link-color-toggled: #A0D8EE;
-$topbar-menu-icon-color-toggled: #A0D8EE;
-$topbar-menu-link-color: #000;
-$topbar-menu-icon-color: #000;
-$topbar-menu-link-color-toggled: #54C1EF;
-$topbar-menu-icon-color-toggled: #54C1EF;
+$topbar-menu-link-color-toggled: $blue-1;
+$topbar-menu-icon-color-toggled: $blue-1;
+$topbar-menu-link-color: $black-1;
+$topbar-menu-icon-color: $black-1;
+$topbar-menu-link-color-toggled: $blue-2;
+$topbar-menu-icon-color-toggled: $blue-2;
 
 
 
 /* Footer
 ------------------------------------------------------------------- */
 
-$footer-bg          : #fff;
-$footer-color       : #000;
-$footer-link-color  : #54C1EF;
+$footer-bg          : $white-1;
+$footer-color       : $black-1;
+$footer-link-color  : $blue-2;
 
 
-$subfooter-bg       : #fff;
-$subfooter-color    : #000;
-$subfooter-link-color: #54C1EF;
+$subfooter-bg       : $white-1;
+$subfooter-color    : $black-1;
+$subfooter-link-color: $blue-2;
 
 
 
 /* Code
 ------------------------------------------------------------------- */
 
-$code-background-color: #fae1f3;
+$code-background-color: $pink-1;
 
 $highlight-background: #ffffff;
 $highlight-comment: #999988;
