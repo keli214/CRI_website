@@ -41,6 +41,7 @@ text
 <div class="row">
   <div class="large-4 columns">
       <img src="https://p.kindpng.com/picc/s/343-3433099_cinnamoroll-sleepy-kawaii-cute-sanrio-freetoedit-kawaii-sanrio.png" height="137">
+    hehe text
   </div>
   <div class="large-4 columns">
       <img src="https://www.kindpng.com/picc/m/343-3433093_transparent-cinnamoroll-png-cartoon-png-download.png" height="137">
