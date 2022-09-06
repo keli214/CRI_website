@@ -7,4 +7,4 @@ sidebar: right
 layout              : page-fullwidth
 permalink           : "/explanation/"
 ---
-hehe
+text
