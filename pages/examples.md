@@ -26,8 +26,9 @@ text
   
 ## Hehehe  {#hehehe}
 text  
+  ```
+  print('hello world');
+  ```
   
 </div><!-- /.medium-8.columns -->
 </div><!-- /.row -->
-
-bottom text
