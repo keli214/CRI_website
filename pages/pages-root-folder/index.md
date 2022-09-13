@@ -6,22 +6,6 @@
 #
 layout: frontpage
 
-widget1:
-  title: "Cinnamoroll"
-  url: 'https://stang126.github.io/CRI/'
-  image: tumblr_f40443bf9aa38d7eaf4a6940521fe55d_e3aeaff6_640.jpg
-  text: '...'
-widget2:
-  title: "Gert"
-  url: 'https://stang126.github.io/CRI/'
-  image: gertcauwenberghs.png
-  text: '...'
-widget3:
-  title: "Kuromi"
-  url: 'https://stang126.github.io/CRI/'
-  image: download.jpg
-  text: '...'
-
 #
 # Use the call for action to show a button on the frontpage
 #
@@ -44,3 +28,13 @@ homepage: true
 ---
 
 The ISN CRI project is hosted at SDDC and aims to make massive scale simulations of spiking neural networks easily accessible to the research community, in particular researches interested in neuromorphic computing for artificial intelligence and neuroscience researchers. 
+
+## Install
+---
+
+how to install
+
+## Quick Start
+---
+
+getting started
