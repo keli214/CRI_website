@@ -38,3 +38,5 @@ how to install
 ---
 
 getting started
+
+### Using NeuroSci Gateway
