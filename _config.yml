@@ -25,8 +25,8 @@ author: ISN
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
-url: 'https://keli214.github.io/CRI_website/'
-baseurl: '/CRI'
+url: 'https://keli214.github.io'
+baseurl: '/CRI_website'
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
