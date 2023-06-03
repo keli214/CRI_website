@@ -1,2 +1,2 @@
 # CRI
-https://stang126.github.io/CRI/
+https://keli214.github.io/CRI_website/
