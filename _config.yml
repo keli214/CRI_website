@@ -8,13 +8,13 @@
 #                                                 /____/
 #
 # Title of your website
-title: 'CRI'
+title: 'HiAER Spike'
 
 # The slogan describes your website and is used on homepage in <title> and other important places
 slogan: 'Version #'
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: '»CRI« is a program created by the ISN lab at UC San Diego.'
+description: '»HiAER Spike« is a program created by the ISN lab at UC San Diego.'
 
 # The credits show up in the includes/_footer.html – It would be nice of you to leave a link to Phlow or Feeling Responsive as a thank you :)
 credits: '<p>Created with &hearts; by Serena & Keli with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> based on <a href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a>.</p>'
@@ -26,7 +26,7 @@ author: ISN
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
 url: 'https://keli214.github.io'
-baseurl: '/CRI_website'
+baseurl: '/HiAER-Spike'
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
@@ -38,7 +38,7 @@ improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'https://keli214.github.io/CRI_website/images/'
+urlimg: 'https://keli214.github.io/HiAER-Spike/images/'
 
 
 # Logo size is 600x80 pixels
