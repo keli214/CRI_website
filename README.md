@@ -1,2 +1,2 @@
-# CRI
-https://keli214.github.io/CRI_website/
+# HiAER Spike
+https://keli214.github.io/HiAER-Spike/
