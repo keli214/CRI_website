@@ -1,10 +1,10 @@
 ---
 layout              : page
-title               : "Explanation"
-meta_title          : "Explanation"
+title               : "Motivation"
+meta_title          : "Motivation"
 header              : no
 sidebar: right
 layout              : page-fullwidth
-permalink           : "/explanation/"
+permalink           : "/motivation/"
 ---
 text

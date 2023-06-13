@@ -2,17 +2,24 @@
   url: "/"
   side: left
 
-- title: Examples
-  url: "/examples/"
+- title: Tutorials
+  url: "/tutorials/"
   side: left
+  dropdown:
+  - title: "Usage"
+    url: "/tutorials/usage"
+  - title: "Mnist"
+    url: "/tutorials/mnist"
+  - title: "CNN"
+    url: "/tutorials/cnn"
 
-- title: "explanation"
-  url: "/explanation/"
-  side: left
+# - title: "Motivation"
+#   url: "/motivation/"
+#   side: left
 
-- title: "FAQ"
-  url: "/faq/"
-  side: left
+# - title: "FAQ"
+#   url: "/faq/"
+#   side: left
 
 - title: API
   url: "/api/"
@@ -23,9 +30,9 @@
   - title: "CRI_Simulations"
     url: "/cri/"
 
-- title: What's New
-  url: "/whats-new/"
-  side: left
+# - title: What's New
+#   url: "/whats-new/"
+#   side: left
 
 - title: "Search"
   url: "/search/"
@@ -38,3 +45,4 @@
 - title: "ISN Lab @ UC San Diego"
   url: "https://isn.ucsd.edu/index.php"
   side: right
+
