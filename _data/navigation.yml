@@ -22,13 +22,9 @@
 #   side: left
 
 - title: API
-  url: "/api/"
+  url: "/API/"
   side: left
-  dropdown:
-  - title: "L2S"
-    url: "/l2s/"
-  - title: "CRI_Simulations"
-    url: "/cri/"
+
 
 # - title: What's New
 #   url: "/whats-new/"
