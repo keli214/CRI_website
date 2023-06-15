@@ -24,49 +24,9 @@ permalink: /index.html
 homepage: true
 ---
 
-<!-- ## Introduction
----
-
-The ISN CRI project is hosted at SDDC and aims to make massive scale simulations of spiking neural networks easily accessible to the research community, in particular researches interested in neuromorphic computing for artificial intelligence and neuroscience researchers. 
-
-## Install
----
-
-### Simple Installation
-{% include alert terminal='pip install l2s' %}
-
-### Development Installation
-
-- First install [Poetry](https://python-poetry.org/)
-  - If Poetry installs in may be necessary to install an alternative Python distribution such as [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
-- Then clone this repository: 
-
-{% include alert terminal='git clone https://github.com/Integrated-Systems-Neuroengineering/L2S.git' %}
-
-- Next you will need to clone the cri-simulations repository into the same directory you just cloned the L2S repository into:
-
-{% include alert terminal='git clone https://github.com/Integrated-Systems-Neuroengineering/CRI_Simulations_Public.git' %}
-
-- cd into the L2S repo you cloned and install the needed dependencies. Resolving dependencies may take a while.
-
-{% include alert terminal='cd L2S <br> poetry install' %}
-
-   - Some Python dependencies may require a compiler supporting C++11 to be installed on your system, such as a recent version of GCC
-
-- finally activate the development environment
-
-{% include alert terminal='poetry shell' %}
-
-## Quick Start
----
-
-getting started
-
-### Using NeuroSci Gateway -->
-
 ## **Introduction**
 ---
-L2S is a Python library for interacting with the ISN CRI project hosted at SDSC. This project aims to make massive scale simulations of spiking neural networks easily accessible to the research community, and in particular researches interested in neuromorphic computing for artificial intelligence and neuroscience researchers. This library allows a user to define a spiking neural network and execute it on one of two backends: the CRI neuromorphic hardware or if the hardware is not available a python simulation of the hardware.
+hs_api is a Python library for interacting with the ISN HiAER-Spike project hosted at SDSC. This project aims to make massive scale simulations of spiking neural networks easily accessible to the research community, and in particular researches interested in neuromorphic computing for artificial intelligence and neuroscience researchers. This library allows a user to define a spiking neural network and execute it on one of two backends: the CRI neuromorphic hardware or if the hardware is not available a python simulation of the hardware.
   
   Check out the [Usage]({{ site.url }}{{ site.baseurl }}/#usage) section for further information, including how to [install]({{ site.url }}{{site.baseurl}}/#installation) the project.
 
