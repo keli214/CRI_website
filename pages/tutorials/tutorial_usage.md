@@ -40,10 +40,15 @@ The configuration dictionary specifies a few properties that are shared by every
 
 {% include alert terminal="outputs = &#91;'a', 'b'&#93;" %}
 
+#### **Defining Stochastic Behavior**
+HiAER-Spike supports randomly perturbing the membrane potential of neurons at each timestep of execution. To enable this perturbation the perturb variable is set to True. The amplitude of this perturbation can also be scaled by setting the perturbMag variable (default = 0). perturbMag takes integer values between 0 and 18 and multiplies the random noise to be added to the membrane potential by 2<sup>perturbMag</sup>.
+
+{% include alert terminal="perturb = True <br> perturbMag = 2" %}
+
 #### **Initializing a network**
 Once we’ve defined the above dictionaries and list we must pass them to the CRI_network constructor to create a CRI_network object.
 
-{% include alert terminal='network = CRI_network(axons=axons,connections=connections,config=config, outputs=outputs)' %}
+{% include alert terminal='network = CRI_network(axons=axons,connections=connections,config=config, outputs=outputs, perturb=Perturb, perturbMag = perturbMag)' %}
 
 #### **Running a Timestep**
 Once we’ve constructed an CRI_network object we can run a timestep. We do so by calling the step() method of CRI_network. This method expects a single input called inputs. Inputs defines the inputs to the network at the current timestep, in particular it is a list of names of axons that you wish to carry spikes into the network at the current timestep. Normally network.step() returns a list of the keys that correspond to neurons that spiked during the given timestep, however the membranePotential parameter can be set to True to additionally output the membranePotentials for all neurons in the network.
